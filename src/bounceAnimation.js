@@ -1,13 +1,20 @@
 import bounce from "./bounce.js";
 
-const bounceAnimation = ({ gsap, id, duration, height }) => {
+const bounceAnimation = ({ id, duration, height, delay }) => {
 	const timeline = gsap.timeline({ repeat: 0, yoyo: true });
-	const bounces = Math.ceil(duration / 0.4);
+	const totalBounces = Math.ceil((duration - delay) / 0.4);
+	const lastBounces = 10;
+
+	bounce({ timeline, id, duration: 0.4, height, delay });
+
+	for (let i = 0; i < totalBounces - lastBounces; i++) {
+		bounce({ timeline, id, duration: 0.4, height });
+	}
 
 	let currentHeight = height;
-	for (let i = 0; i < bounces; i++) {
+	for (let i = 0; i < lastBounces; i++) {
 		bounce({ timeline, id, duration: 0.4, height: currentHeight });
-		currentHeight = (3 * height) / 4;
+		currentHeight = height / 3;
 	}
 };
 
