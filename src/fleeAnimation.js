@@ -10,7 +10,7 @@ const fleeAnimation = ({ id, duration, bounceDelay, runDelay, runDistance, shoul
 
 	gsap.to(id, {
 		x: runDistance,
-		...(shouldRoll ? { rotation: -720, transformOrigin: "center center" } : {}),
+		...(shouldRoll ? { rotation: 720, transformOrigin: "center center" } : {}),
 		duration,
 		ease: "power3.out",
 		delay: runDelay,
