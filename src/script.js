@@ -11,6 +11,7 @@ fleeAnimation({
 	bounceDelay: 2.05,
 	runDelay: 2.05,
 	runDistance: 1050,
+	shouldWiggle: true,
 });
 
 fleeAnimation({
@@ -19,6 +20,7 @@ fleeAnimation({
 	bounceDelay: 2,
 	runDelay: 2,
 	runDistance: 1130,
+	bounceHeigt: 200,
 });
 
 fleeAnimation({
